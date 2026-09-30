@@ -235,18 +235,6 @@ pip install -r requirements-dev.txt
 pytest
 ```
 
-## Что можно улучшить дальше
-
-- streaming ответа;
-- удаление и переиндексация документов;
-- reranking;
-- hybrid search: BM25 + vector search;
-- evaluation retrieval/answer quality;
-- авторизация пользователей;
-- API/integration tests;
-- GitHub Actions CI;
-- production deployment.
-
 ## Статус
 
 **Working portfolio project / v1.0**
