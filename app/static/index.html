@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>AI Knowledge Assistant</title>
+  <link rel="stylesheet" href="/static/styles.css" />
+</head>
+<body>
+  <main class="shell">
+    <section class="hero">
+      <p class="eyebrow">RAG • FastAPI • ChromaDB • LM Studio</p>
+      <h1>AI Knowledge Assistant</h1>
+      <p class="lead">Загрузите документы и задавайте вопросы по своей локальной базе знаний.</p>
+    </section>
+
+    <section class="card upload-card">
+      <div>
+        <h2>1. База знаний</h2>
+        <p>PDF, TXT или Markdown. Можно выбрать несколько файлов.</p>
+      </div>
+      <div class="upload-row">
+        <input id="files" type="file" accept=".pdf,.txt,.md" multiple />
+        <button id="uploadButton">Загрузить</button>
+      </div>
+      <div id="uploadStatus" class="status"></div>
+      <div id="documents" class="documents"></div>
+    </section>
+
+    <section class="card">
+      <h2>2. Вопрос к документам</h2>
+      <div id="chat" class="chat"></div>
+      <form id="askForm" class="ask-row">
+        <textarea id="question" rows="3" placeholder="Например: какие основные требования описаны в документе?"></textarea>
+        <button type="submit">Спросить</button>
+      </form>
+      <div id="sources" class="sources"></div>
+    </section>
+
+    <section class="card secondary">
+      <h2>3. Tool calling</h2>
+      <p>Отдельный агент умеет посмотреть список индексированных документов и сохранить заметку.</p>
+      <form id="agentForm" class="ask-row">
+        <textarea id="agentMessage" rows="2" placeholder="Например: какие документы сейчас загружены?"></textarea>
+        <button type="submit">Запустить агента</button>
+      </form>
+      <div id="agentResult" class="agent-result"></div>
+    </section>
+  </main>
+  <script src="/static/app.js"></script>
+</body>
+</html>

@@ -1,0 +1,14 @@
+.git
+.github
+.venv
+__pycache__
+*.py[cod]
+.env
+.idea
+.vscode
+.pytest_cache
+*.zip
+*.log
+data/app.db
+data/uploads/*
+data/chroma/*

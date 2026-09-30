@@ -1,0 +1,15 @@
+services:
+  app:
+    build: .
+    ports:
+      - "8000:8000"
+    environment:
+      LM_STUDIO_BASE_URL: http://host.docker.internal:1234/v1
+      LM_STUDIO_API_KEY: lm-studio
+      LM_STUDIO_MODEL: ${LM_STUDIO_MODEL:-google/gemma-4-e4b}
+      EMBEDDING_MODEL: ${EMBEDDING_MODEL:-text-embedding-nomic-embed-text-v1.5}
+      CHROMA_COLLECTION: ${CHROMA_COLLECTION:-knowledge_base}
+      MAX_CONTEXT_CHUNKS: ${MAX_CONTEXT_CHUNKS:-3}
+      MIN_RELEVANCE: ${MIN_RELEVANCE:-0.15}
+    volumes:
+      - ./data:/app/data
